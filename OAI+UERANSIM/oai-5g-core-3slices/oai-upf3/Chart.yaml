@@ -19,7 +19,7 @@
 #      contact@openairinterface.org
 ################################################################################
 apiVersion: v2
-name: oai-upf
+name: oai-upf3
 description: A Helm chart for UPF as network function
 
 type: application
