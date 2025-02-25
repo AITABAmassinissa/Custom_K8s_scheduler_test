@@ -23,11 +23,8 @@ http_version: 2
 ## general single_nssai configuration
 ## Defines YAML anchors, which are reused in the config file
 snssais:
-  - &embb_slice1
-    sst: 1
   - &embb_slice2
-    sst: 1
-    sd: 000001 # in hex
+    sst: 128
 
 ############## SBI Interfaces
 ### Each NF takes its local SBI interfaces and remote interfaces from here, unless it gets them using NRF discovery mechanisms
@@ -37,8 +34,8 @@ nfs:
     sbi:
       port: 80
       api_version: v1
-  smf:
-    host: oai-smf
+  smf2:
+    host: oai-smf2
     sbi:
       port: 80
       api_version: v1
@@ -58,7 +55,7 @@ nfs:
       api_version: v1
 
 ############## NF-specific configuration
-smf:
+smf2:
   ue_mtu: 1500
   support_features:
     use_local_subscription_info: yes # Use infos from local_subscription_info or from UDM
@@ -75,37 +72,25 @@ smf:
     secondary_ipv4: "8.8.8.8"
     secondary_ipv6: "2001:4860:4860::8888"
   ims:
-    pcscf_ipv4: "192.168.70.139"
+    pcscf_ipv4: "192.168.70.140"
     pcscf_ipv6: "fe80::7915:f408:1787:db8b"
   # the DNN you configure here should be configured in "dnns"
   # follows the SmfInfo datatype from 3GPP TS 29.510
   smf_info:
     sNssaiSmfInfoList:
-      - sNssai: *embb_slice1
-        dnnSmfInfoList:
-          - dnn: "oai"
       - sNssai: *embb_slice2
         dnnSmfInfoList:
-          - dnn: "ims"
+          - dnn: "oai2"
   local_subscription_infos:
-    - single_nssai: *embb_slice1
-      dnn: "oai"
+    - single_nssai: *embb_slice2
+      dnn: "oai2"
       qos_profile:
         5qi: 5
         session_ambr_ul: "200Mbps"
         session_ambr_dl: "400Mbps"
-    - single_nssai: *embb_slice2
-      dnn: "ims"
-      qos_profile:
-        5qi: 2
-        session_ambr_ul: "100Mbps"
-        session_ambr_dl: "200Mbps"
 
 ## DNN configuration
 dnns:
-  - dnn: "oai"
+  - dnn: "oai2"
     pdu_session_type: "IPV4"
     ipv4_subnet: "12.1.1.0/24"
-  - dnn: "ims"
-    pdu_session_type: "IPV4V6"
-    ipv4_subnet: "14.1.1.0/24"

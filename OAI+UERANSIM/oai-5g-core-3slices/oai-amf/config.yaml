@@ -26,8 +26,11 @@ snssais:
   - &embb_slice1
     sst: 1
   - &embb_slice2
-    sst: 1
-    sd: 000001
+    sst: 128
+    #sd: 000001
+  - &embb_slice3
+    sst: 130
+    #sd: 000001
 
 ############## SBI Interfaces
 ### Each NF takes its local SBI interfaces and remote interfaces from here, unless it gets them using NRF discovery mechanisms
@@ -53,6 +56,11 @@ nfs:
       api_version: v1
   nrf:
     host: oai-nrf
+    sbi:
+      port: 80
+      api_version: v1
+  nrf2:
+    host: oai-nrf2
     sbi:
       port: 80
       api_version: v1
@@ -98,6 +106,7 @@ amf:
       nssai:
         - *embb_slice1
         - *embb_slice2
+        - *embb_slice3
   supported_integrity_algorithms:
     - "NIA0"
     - "NIA1"
