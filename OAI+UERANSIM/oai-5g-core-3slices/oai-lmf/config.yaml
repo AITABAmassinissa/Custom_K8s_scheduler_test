@@ -25,9 +25,12 @@ http_version: 2
 snssais:
   - &embb_slice1
     sst: 1
+  snssais:
   - &embb_slice2
-    sst: 1
-    sd: 000001 # in hex
+    sst: 128
+  snssais:
+  - &embb_slice3
+    sst: 130
 
 ############## SBI Interfaces
 ### Each NF takes its local SBI interfaces and remote interfaces from here, unless it gets them using NRF discovery mechanisms
@@ -45,6 +48,11 @@ nfs:
       api_version: v1
   nrf:
     host: oai-nrf
+    sbi:
+      port: 80
+      api_version: v1
+  nrf2:
+    host: oai-nrf2
     sbi:
       port: 80
       api_version: v1
