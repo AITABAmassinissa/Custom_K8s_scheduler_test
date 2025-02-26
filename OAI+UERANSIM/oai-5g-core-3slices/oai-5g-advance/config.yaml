@@ -229,10 +229,10 @@ smf:
           - dnn: "oai"
       - sNssai: *embb_slice2
         dnnSmfInfoList:
-          - dnn: "oai2"
+          - dnn: "oai"
       - sNssai: *embb_slice3
         dnnSmfInfoList:
-          - dnn: "oai3"
+          - dnn: "oai"
 
   local_subscription_infos:
     - single_nssai: *embb_slice1
@@ -242,13 +242,13 @@ smf:
         session_ambr_ul: "200Mbps"
         session_ambr_dl: "400Mbps"
     - single_nssai: *embb_slice2
-      dnn: "oai2"
+      dnn: "oai"
       qos_profile:
         5qi: 5
         session_ambr_ul: "200Mbps"
         session_ambr_dl: "400Mbps"
     - single_nssai: *embb_slice3
-      dnn: "oai3"
+      dnn: "oai"
       qos_profile:
         5qi: 5
         session_ambr_ul: "200Mbps"
@@ -289,7 +289,7 @@ upf2:
     sNssaiUpfInfoList:
     - sNssai: *embb_slice2
       dnnUpfInfoList:
-        - dnn: oai2
+        - dnn: oai
 upf3:
   support_features:
     enable_bpf_datapath: no    # If "on": BPF is used as datapath else simpleswitch is used, DEFAULT= off
@@ -299,15 +299,15 @@ upf3:
     sNssaiUpfInfoList:
     - sNssai: *embb_slice3
       dnnUpfInfoList:
-        - dnn: oai3
+        - dnn: oai
 ## DNN configuration
 dnns:
   - dnn: "oai"
     pdu_session_type: "IPV4"
     ipv4_subnet: "12.1.1.0/24"
-  - dnn: "oai2"
+  - dnn: "oai"
     pdu_session_type: "IPV4"
     ipv4_subnet: "12.1.1.0/24"
-  - dnn: "oai3"
+  - dnn: "oai"
     pdu_session_type: "IPV4"
     ipv4_subnet: "12.1.1.0/24"
