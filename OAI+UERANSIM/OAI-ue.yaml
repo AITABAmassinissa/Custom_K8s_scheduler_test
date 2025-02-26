@@ -41,17 +41,17 @@ sessions:
   - type: 'IPv4'
     apn: 'yyy'
     slice:
-      sst: "1"
+      sst: "zzz"
       sd: "16777215"
 
 # Configured NSSAI for this UE by HPLMN
 configured-nssai:
-  - sst: "1"
+  - sst: "zzz"
     sd: "16777215"
 
 # Default Configured NSSAI for this UE
 default-nssai:
-  - sst: "1"
+  - sst: "zzz"
     sd: "16777215"
 
 # Supported integrity algorithms by this UE
