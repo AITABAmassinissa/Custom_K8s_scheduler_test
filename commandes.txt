@@ -1,3 +1,8 @@
 helm dependency update oai-5g-core-3slices/oai-5g-advance/
 helm install basic oai-5g-core-3slices/oai-5g-advance/ -n oai
 
+helm dependency update oai-5g-core-basic-cleaned/oai-5g-basic/
+helm install basic oai-5g-core-basic-cleaned/oai-5g-basic/ -n oai
+
+
+
