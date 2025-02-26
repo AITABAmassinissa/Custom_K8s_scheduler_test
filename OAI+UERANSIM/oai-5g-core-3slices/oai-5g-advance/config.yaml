@@ -42,6 +42,24 @@ nfs:
     n4:
       interface_name: eth0
       port: 8805
+  smf2:
+    host: oai-smf2
+    sbi:
+      port: 80
+      api_version: v1
+      interface_name: eth0
+    n4:
+      interface_name: eth0
+      port: 8805
+  smf3:
+    host: oai-smf3
+    sbi:
+      port: 80
+      api_version: v1
+      interface_name: eth0
+    n4:
+      interface_name: eth0
+      port: 8805
   lmf:
     host: oai-lmf
     sbi:
@@ -50,6 +68,40 @@ nfs:
       interface_name: eth0
   upf:
     host: oai-upf
+    sbi:
+      port: 80
+      api_version: v1
+      interface_name: eth0
+    n3:
+      interface_name: eth0
+      port: 2152
+    n4:
+      interface_name: eth0
+      port: 8805
+    n6:
+      interface_name: eth0
+    n9:
+      interface_name: eth0
+      port: 2152
+  upf2:
+    host: oai-upf2
+    sbi:
+      port: 80
+      api_version: v1
+      interface_name: eth0
+    n3:
+      interface_name: eth0
+      port: 2152
+    n4:
+      interface_name: eth0
+      port: 8805
+    n6:
+      interface_name: eth0
+    n9:
+      interface_name: eth0
+      port: 2152
+  upf3:
+    host: oai-upf3
     sbi:
       port: 80
       api_version: v1
@@ -85,6 +137,12 @@ nfs:
       interface_name: eth0
   nrf:
     host: oai-nrf
+    sbi:
+      port: 80
+      api_version: v1
+      interface_name: eth0
+  nrf2:
+    host: oai-nrf2
     sbi:
       port: 80
       api_version: v1
@@ -150,14 +208,18 @@ smf:
     - host: oai-upf
       config:
         enable_usage_reporting: no
+    - host: oai-upf2
+      config:
+        enable_usage_reporting: no
+    - host: oai-upf3
+      config:
+        enable_usage_reporting: no
   ue_dns:
     primary_ipv4: "10.3.2.200"
     primary_ipv6: "2001:4860:4860::8888"
     secondary_ipv4: "8.8.8.8"
     secondary_ipv6: "2001:4860:4860::8888"
-  ims:
-    pcscf_ipv4: "192.168.70.139"
-    pcscf_ipv6: "fe80::7915:f408:1787:db8b"
+
   # the DNN you configure here should be configured in "dnns"
   # follows the SmfInfo datatype from 3GPP TS 29.510
   smf_info:
@@ -165,10 +227,10 @@ smf:
       - sNssai: *embb_slice1
         dnnSmfInfoList:
           - dnn: "oai"
-      - sNssai: *embb_slice1
+      - sNssai: *embb_slice2
         dnnSmfInfoList:
           - dnn: "oai2"
-      - sNssai: *embb_slice1
+      - sNssai: *embb_slice3
         dnnSmfInfoList:
           - dnn: "oai3"
 
@@ -179,13 +241,13 @@ smf:
         5qi: 5
         session_ambr_ul: "200Mbps"
         session_ambr_dl: "400Mbps"
-    - single_nssai: *embb_slice1
+    - single_nssai: *embb_slice2
       dnn: "oai2"
       qos_profile:
         5qi: 5
         session_ambr_ul: "200Mbps"
         session_ambr_dl: "400Mbps"
-    - single_nssai: *embb_slice1
+    - single_nssai: *embb_slice3
       dnn: "oai3"
       qos_profile:
         5qi: 5
@@ -217,14 +279,27 @@ upf:
     - sNssai: *embb_slice1
       dnnUpfInfoList:
         - dnn: oai
-    - sNssai: *embb_slice1
+
+upf2:
+  support_features:
+    enable_bpf_datapath: no    # If "on": BPF is used as datapath else simpleswitch is used, DEFAULT= off
+    enable_snat: yes           # If "on": Source natting is done for UE, DEFAULT= off
+  remote_n6_gw: localhost      # Dummy host since simple-switch does not use N6 GW
+  upf_info:
+    sNssaiUpfInfoList:
+    - sNssai: *embb_slice2
       dnnUpfInfoList:
         - dnn: oai2
-    - sNssai: *embb_slice1
+upf3:
+  support_features:
+    enable_bpf_datapath: no    # If "on": BPF is used as datapath else simpleswitch is used, DEFAULT= off
+    enable_snat: yes           # If "on": Source natting is done for UE, DEFAULT= off
+  remote_n6_gw: localhost      # Dummy host since simple-switch does not use N6 GW
+  upf_info:
+    sNssaiUpfInfoList:
+    - sNssai: *embb_slice3
       dnnUpfInfoList:
         - dnn: oai3
-
-
 ## DNN configuration
 dnns:
   - dnn: "oai"
