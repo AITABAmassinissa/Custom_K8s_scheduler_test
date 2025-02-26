@@ -19,7 +19,7 @@ with open(r'OAI-gnb.yaml', 'r') as file:
 data = data.replace("xxx", str(ip_adress))
 data = data.replace("yyy", str(amf_ip))
 for i in range(0,len(dnn)):
-    data = data.replace("zzz", sst[i])
+    data = data.replace("zzz", str(sst[i]))
     with open(r'UERANSIM/build/'+gnbfiles[i], 'w') as file:
         file.write(data)
         file.close()
@@ -31,7 +31,7 @@ data = data.replace("xxx", str(ip_adress))
 
 for i in range(0,len(dnn)):
     data = data.replace("yyy", dnn[i])
-    data = data.replace("zzz", sst[i])
+    data = data.replace("zzz", str(sst[i]))
     with open(r'UERANSIM/build/'+uefiles[i], 'w') as file:
         file.write(data)
         file.close()
