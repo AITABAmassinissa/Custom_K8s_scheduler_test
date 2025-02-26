@@ -6,6 +6,7 @@ network="cni0"
 dnn=["oai","oai2","oai3"]
 gnbfiles=["OAI-gnb.yaml","OAI-gnb2.yaml","OAI-gnb3.yaml"]
 uefiles=["OAI-ue.yaml","OAI-ue2.yaml","OAI-ue3.yaml"]
+nci=["0x000000010","0x000000020","0x000000030"]
 sst=[1,128,130]
 
 retour=os.popen("kubectl get pods -n "+namespace).read() 
@@ -21,6 +22,7 @@ for i in range(0,len(dnn)):
     data[i] = data[i].replace("xxx", str(ip_adress))
     data[i] = data[i].replace("yyy", str(amf_ip))
     data[i] = data[i].replace("zzz", str(sst[i]))
+    data[i] = data[i].replace("ttt", str(nci[i]))
     with open(r'UERANSIM/build/'+gnbfiles[i], 'w') as file:
         file.write(data[i])
         file.close()
