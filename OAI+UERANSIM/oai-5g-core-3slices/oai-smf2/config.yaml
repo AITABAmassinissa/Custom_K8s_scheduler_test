@@ -63,7 +63,7 @@ smf2:
     discover_upf: yes
   # we resolve from NRF, this is just to configure usage_reporting
   upfs:
-    - host: oai-upf
+    - host: oai-upf2
       config:
         enable_usage_reporting: no
   ue_dns:
@@ -71,9 +71,6 @@ smf2:
     primary_ipv6: "2001:4860:4860::8888"
     secondary_ipv4: "8.8.8.8"
     secondary_ipv6: "2001:4860:4860::8888"
-  ims:
-    pcscf_ipv4: "192.168.70.140"
-    pcscf_ipv6: "fe80::7915:f408:1787:db8b"
   # the DNN you configure here should be configured in "dnns"
   # follows the SmfInfo datatype from 3GPP TS 29.510
   smf_info:

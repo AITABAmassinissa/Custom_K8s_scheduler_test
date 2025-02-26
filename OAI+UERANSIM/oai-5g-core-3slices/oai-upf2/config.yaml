@@ -29,14 +29,14 @@ snssais:
 ############## SBI Interfaces
 ### Each NF takes its local SBI interfaces and remote interfaces from here, unless it gets them using NRF discovery mechanisms
 nfs:
-  smf:
-    host: oai-smf
+  smf2:
+    host: oai-smf2
     sbi:
       port: 80
     n4:
       port: 8805
-  upf:
-    host: oai-upf
+  upf2:
+    host: oai-upf2
     sbi:
       port: 80
       api_version: v1
@@ -59,14 +59,14 @@ nfs:
       api_version: v1
 
 ############## NF-specific configuration
-upf:
+upf2:
   support_features:
     enable_bpf_datapath: no    # If "on": BPF is used as datapath else simpleswitch is used, DEFAULT= off
     enable_snat: yes           # If "on": Source natting is done for UE, DEFAULT= off
   remote_n6_gw: 127.0.0.1      # Dummy host since simple-switch does not use N6 GW
   upf_info:
     sNssaiUpfInfoList:
-    - sNssai: *embb_slice1
+    - sNssai: *embb_slice2
       dnnUpfInfoList:
         - dnn: oai2
 

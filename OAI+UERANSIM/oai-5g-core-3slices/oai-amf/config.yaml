@@ -49,6 +49,16 @@ nfs:
     sbi:
       port: 80
       api_version: v1
+  smf2:
+    host: oai-smf2
+    sbi:
+      port: 80
+      api_version: v1
+  smf3:
+    host: oai-smf3
+    sbi:
+      port: 80
+      api_version: v1
   ausf:
     host: oai-ausf
     sbi:
