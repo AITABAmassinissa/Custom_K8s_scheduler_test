@@ -17,7 +17,7 @@ snssais:
   - &embb_slice1
     sst: 1
   - &embb_slice2
-    sst: 128
+    sst: 1
   - &embb_slice3
     sst: 130
 
