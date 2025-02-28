@@ -77,10 +77,10 @@ smf2:
     sNssaiSmfInfoList:
       - sNssai: *embb_slice2
         dnnSmfInfoList:
-          - dnn: "oai"
+          - dnn: "oai2"
   local_subscription_infos:
     - single_nssai: *embb_slice2
-      dnn: "oai"
+      dnn: "oai2"
       qos_profile:
         5qi: 5
         session_ambr_ul: "200Mbps"
@@ -88,6 +88,6 @@ smf2:
 
 ## DNN configuration
 dnns:
-  - dnn: "oai"
+  - dnn: "oai2"
     pdu_session_type: "IPV4"
     ipv4_subnet: "12.1.1.0/24"
