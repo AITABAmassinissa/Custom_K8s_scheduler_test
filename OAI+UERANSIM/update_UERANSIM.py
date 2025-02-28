@@ -7,7 +7,7 @@ dnn=["oai","oai2","oai3"]
 gnbfiles=["OAI-gnb.yaml","OAI-gnb2.yaml","OAI-gnb3.yaml"]
 uefiles=["OAI-ue.yaml","OAI-ue2.yaml","OAI-ue3.yaml"]
 nci=["0x000000010","0x000000020","0x000000030"]
-sst=[128,1,130]
+sst=[1,128,130]
 
 retour=os.popen("kubectl get pods -n "+namespace).read() 
 amf_ip=os.popen("kubectl get pod -n "+namespace+" $(kubectl get pods --namespace "+namespace+" -l "+"app.kubernetes.io/name=oai-amf"+" -o jsonpath="+"{.items[0].metadata.name}"+") --template '{{.status.podIP}}'").read()
