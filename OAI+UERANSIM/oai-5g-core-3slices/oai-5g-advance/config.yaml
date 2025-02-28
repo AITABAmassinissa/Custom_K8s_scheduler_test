@@ -15,7 +15,7 @@ curl_timeout: 6000 #milliseconds can be changed if the network have issues
 ## Defines YAML anchors, which are reused in the config file
 snssais:
   - &embb_slice1
-    sst: 1
+    sst: 128
   - &embb_slice2
     sst: 1
   - &embb_slice3
@@ -229,7 +229,7 @@ smf:
           - dnn: "oai"
       - sNssai: *embb_slice2
         dnnSmfInfoList:
-          - dnn: "oaii"
+          - dnn: "oai"
       - sNssai: *embb_slice3
         dnnSmfInfoList:
           - dnn: "oai3"
@@ -242,7 +242,7 @@ smf:
         session_ambr_ul: "200Mbps"
         session_ambr_dl: "400Mbps"
     - single_nssai: *embb_slice2
-      dnn: "oaii"
+      dnn: "oai"
       qos_profile:
         5qi: 5
         session_ambr_ul: "200Mbps"
@@ -289,7 +289,7 @@ upf2:
     sNssaiUpfInfoList:
     - sNssai: *embb_slice2
       dnnUpfInfoList:
-        - dnn: oaii
+        - dnn: oai
 upf3:
   support_features:
     enable_bpf_datapath: no    # If "on": BPF is used as datapath else simpleswitch is used, DEFAULT= off
@@ -305,7 +305,7 @@ dnns:
   - dnn: "oai"
     pdu_session_type: "IPV4"
     ipv4_subnet: "12.1.1.0/24"
-  - dnn: "oaii"
+  - dnn: "oai"
     pdu_session_type: "IPV4"
     ipv4_subnet: "12.1.1.0/24"
   - dnn: "oai3"
