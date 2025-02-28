@@ -10,7 +10,6 @@ nci=["0x000000010","0x000000020","0x000000030"]
 sst=[128,1,130]
 
 retour=os.popen("kubectl get pods -n "+namespace).read() 
-Running=0
 amf_ip=os.popen("kubectl get pod -n "+namespace+" $(kubectl get pods --namespace "+namespace+" -l "+"app.kubernetes.io/name=oai-amf"+" -o jsonpath="+"{.items[0].metadata.name}"+") --template '{{.status.podIP}}'").read()
 os.system("sudo ifconfig "+network+":"+str(1)+" "+str(ip_adress)+" up")
 #update OAI-gnb file for UERANSIM 

@@ -24,7 +24,7 @@ http_version: 2  # allowed value 1 and 2, make sure all NFs use the same HTTP ve
 ## only hex values are supported for sst
 snssais:
   - &embb_slice1
-    sst: 128
+    sst: 1
   - &embb_slice2
     sst: 1
     #sd: 000001

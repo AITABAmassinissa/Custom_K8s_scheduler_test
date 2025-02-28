@@ -15,7 +15,7 @@ curl_timeout: 6000 #milliseconds can be changed if the network have issues
 ## Defines YAML anchors, which are reused in the config file
 snssais:
   - &embb_slice1
-    sst: 128
+    sst: 1
   - &embb_slice2
     sst: 1
   - &embb_slice3
