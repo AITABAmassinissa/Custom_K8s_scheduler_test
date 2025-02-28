@@ -42,17 +42,17 @@ sessions:
     apn: 'yyy'
     slice:
       sst: "zzz"
-      sd: "16777215"
+      #sd: "16777215"
 
 # Configured NSSAI for this UE by HPLMN
 configured-nssai:
   - sst: "zzz"
-    sd: "16777215"
+    #sd: "16777215"
 
 # Default Configured NSSAI for this UE
 default-nssai:
   - sst: "zzz"
-    sd: "16777215"
+    #sd: "16777215"
 
 # Supported integrity algorithms by this UE
 integrity:
