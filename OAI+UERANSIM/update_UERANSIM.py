@@ -3,7 +3,7 @@ import os
 namespace='oai'
 ip_adress="10.244.0.1"
 network="cni0"
-dnn=["oai","oai","oai3"]
+dnn=["oaii","oai","oai3"]
 gnbfiles=["OAI-gnb.yaml","OAI-gnb2.yaml","OAI-gnb3.yaml"]
 uefiles=["OAI-ue.yaml","OAI-ue2.yaml","OAI-ue3.yaml"]
 nci=["0x000000010","0x000000020","0x000000030"]
