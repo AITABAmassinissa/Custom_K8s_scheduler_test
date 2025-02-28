@@ -25,7 +25,10 @@ http_version: 2
 snssais:
   - &embb_slice1
     sst: 1
-
+  - &embb_slice2
+    sst: 128
+  - &embb_slice3
+    sst: 130
 
 ############## SBI Interfaces
 ### Each NF takes its local SBI interfaces and remote interfaces from here, unless it gets them using NRF discovery mechanisms
@@ -70,6 +73,7 @@ upf:
     - sNssai: *embb_slice1
       dnnUpfInfoList:
         - dnn: oai
+
 ## DNN configuration
 dnns:
   - dnn: "oai"

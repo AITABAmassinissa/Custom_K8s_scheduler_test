@@ -26,7 +26,6 @@ snssais:
   - &embb_slice1
     sst: 1
 
-
 ############## SBI Interfaces
 ### Each NF takes its local SBI interfaces and remote interfaces from here, unless it gets them using NRF discovery mechanisms
 nfs:
@@ -72,9 +71,7 @@ smf:
     primary_ipv6: "2001:4860:4860::8888"
     secondary_ipv4: "8.8.8.8"
     secondary_ipv6: "2001:4860:4860::8888"
-  ims:
-    pcscf_ipv4: "192.168.70.139"
-    pcscf_ipv6: "fe80::7915:f408:1787:db8b"
+
   # the DNN you configure here should be configured in "dnns"
   # follows the SmfInfo datatype from 3GPP TS 29.510
   smf_info:
@@ -82,7 +79,6 @@ smf:
       - sNssai: *embb_slice1
         dnnSmfInfoList:
           - dnn: "oai"
-
   local_subscription_infos:
     - single_nssai: *embb_slice1
       dnn: "oai"
@@ -90,7 +86,6 @@ smf:
         5qi: 5
         session_ambr_ul: "200Mbps"
         session_ambr_dl: "400Mbps"
-
 
 ## DNN configuration
 dnns:

@@ -29,6 +29,11 @@ nfs:
     sbi:
       port: 80
       api_version: v1
+  nrf2:
+    host: oai-nrf2
+    sbi:
+      port: 80
+      api_version: v1
 
 ############## NF-specific configuration
 udm:

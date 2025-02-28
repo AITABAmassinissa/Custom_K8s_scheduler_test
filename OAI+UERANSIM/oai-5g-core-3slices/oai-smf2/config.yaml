@@ -71,6 +71,7 @@ smf2:
     primary_ipv6: "2001:4860:4860::8888"
     secondary_ipv4: "8.8.8.8"
     secondary_ipv6: "2001:4860:4860::8888"
+
   # the DNN you configure here should be configured in "dnns"
   # follows the SmfInfo datatype from 3GPP TS 29.510
   smf_info:
@@ -90,4 +91,4 @@ smf2:
 dnns:
   - dnn: "oai2"
     pdu_session_type: "IPV4"
-    ipv4_subnet: "12.1.1.0/24"
+    ipv4_subnet: "12.1.2.0/24"
