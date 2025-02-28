@@ -27,7 +27,7 @@ snssais:
     sst: 1
   snssais:
   - &embb_slice2
-    sst: 1
+    sst: 128
   snssais:
   - &embb_slice3
     sst: 130
