@@ -16,38 +16,46 @@ log_level:
 
 # If you enable registration, the other NFs will use the NRF discovery mechanism
 register_nf:
-  general: no
+  general: yes
 
 http_version: 2
 
 ## general single_nssai configuration
 ## Defines YAML anchors, which are reused in the config file
 snssais:
+  - &embb_slice1
+    sst: 1
   - &embb_slice2
     sst: 128
+  - &embb_slice3
+    sst: 130
 
 ############## SBI Interfaces
 ### Each NF takes its local SBI interfaces and remote interfaces from here, unless it gets them using NRF discovery mechanisms
 nfs:
-  amf:
-    host: oai-amf
+  smf:
+    host: oai-smf
     sbi:
       port: 80
-      api_version: v1
-  smf2:
-    host: oai-smf2
+    n4:
+      port: 8805
+  upf:
+    host: oai-upf
     sbi:
       port: 80
       api_version: v1
       interface_name: eth0
+    n3:
+      interface_name: eth0
+      port: 2152
     n4:
       interface_name: eth0
       port: 8805
-  udm:
-    host: oai-udm
-    sbi:
-      port: 80
-      api_version: v1
+    n6:
+      interface_name: eth0
+    n9:
+      interface_name: eth0
+      port: 2152
   nrf:
     host: oai-nrf
     sbi:
@@ -55,39 +63,19 @@ nfs:
       api_version: v1
 
 ############## NF-specific configuration
-smf2:
-  ue_mtu: 1500
+upf:
   support_features:
-    use_local_subscription_info: yes # Use infos from local_subscription_info or from UDM
-    use_local_pcc_rules: yes # Use infos from local_pcc_rules or from PCF
-    discover_upf: yes
-  # we resolve from NRF, this is just to configure usage_reporting
-  upfs:
-    - host: oai-upf2
-      config:
-        enable_usage_reporting: no
-  ue_dns:
-    primary_ipv4: "10.3.2.200"
-    primary_ipv6: "2001:4860:4860::8888"
-    secondary_ipv4: "8.8.8.8"
-    secondary_ipv6: "2001:4860:4860::8888"
-  # the DNN you configure here should be configured in "dnns"
-  # follows the SmfInfo datatype from 3GPP TS 29.510
-  smf_info:
-    sNssaiSmfInfoList:
-      - sNssai: *embb_slice2
-        dnnSmfInfoList:
-          - dnn: "oai2"
-  local_subscription_infos:
-    - single_nssai: *embb_slice2
-      dnn: "oai2"
-      qos_profile:
-        5qi: 5
-        session_ambr_ul: "200Mbps"
-        session_ambr_dl: "400Mbps"
+    enable_bpf_datapath: no    # If "on": BPF is used as datapath else simpleswitch is used, DEFAULT= off
+    enable_snat: yes           # If "on": Source natting is done for UE, DEFAULT= off
+  remote_n6_gw: 127.0.0.1      # Dummy host since simple-switch does not use N6 GW
+  upf_info:
+    sNssaiUpfInfoList:
+    - sNssai: *embb_slice1
+      dnnUpfInfoList:
+        - dnn: oai
 
 ## DNN configuration
 dnns:
-  - dnn: "oai2"
+  - dnn: "oai"
     pdu_session_type: "IPV4"
-    ipv4_subnet: "12.1.1.0/24"
+    ipv4_subnet: "12.1.1.128/25"

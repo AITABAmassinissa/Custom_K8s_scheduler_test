@@ -18,6 +18,18 @@ configuration:
         nrfId: http://oai-cn5g-nrf-10.fr:80/nnrf-disc/v1/nf-instances
         nsiId: '10'
     - snssai:
+        sst: 128
+        sd: '000001'
+      nsiInformationList:
+        nrfId: http://oai-cn5g-nrf-10.fr:80/nnrf-disc/v1/nf-instances
+        nsiId: '10'
+    - snssai:
+        sst: 130
+        sd: '000001'
+      nsiInformationList:
+        nrfId: http://oai-cn5g-nrf-10.fr:80/nnrf-disc/v1/nf-instances
+        nsiId: '10'
+    - snssai:
         sst: 130
       nsiInformationList:
         nrfId: http://oai-cn5g-nrf-20.fr:80/nnrf-disc/v1/nf-instances
@@ -62,11 +74,11 @@ configuration:
           mnc: '95'
         tac: '33456'
       supportedSnssaiList:
-      - sst: 222
-        sd: '00007B'
+      - sst: 128
+        sd: '000001'
       - sst: 1
         sd: '000001'
-      - sst: 2
+      - sst: 130
     - tai:
         plmnId:
           mcc: '208'

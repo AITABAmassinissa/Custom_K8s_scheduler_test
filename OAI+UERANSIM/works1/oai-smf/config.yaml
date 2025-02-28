@@ -23,9 +23,8 @@ http_version: 2
 ## general single_nssai configuration
 ## Defines YAML anchors, which are reused in the config file
 snssais:
-  - &embb_slice3
-    sst: 130
-
+  - &embb_slice1
+    sst: 1
 
 ############## SBI Interfaces
 ### Each NF takes its local SBI interfaces and remote interfaces from here, unless it gets them using NRF discovery mechanisms
@@ -35,8 +34,8 @@ nfs:
     sbi:
       port: 80
       api_version: v1
-  smf3:
-    host: oai-smf3
+  smf:
+    host: oai-smf
     sbi:
       port: 80
       api_version: v1
@@ -49,14 +48,14 @@ nfs:
     sbi:
       port: 80
       api_version: v1
-  nrf2:
-    host: oai-nrf2
+  nrf:
+    host: oai-nrf
     sbi:
       port: 80
       api_version: v1
 
 ############## NF-specific configuration
-smf3:
+smf:
   ue_mtu: 1500
   support_features:
     use_local_subscription_info: yes # Use infos from local_subscription_info or from UDM
@@ -64,7 +63,7 @@ smf3:
     discover_upf: yes
   # we resolve from NRF, this is just to configure usage_reporting
   upfs:
-    - host: oai-upf3
+    - host: oai-upf
       config:
         enable_usage_reporting: no
   ue_dns:
@@ -72,15 +71,16 @@ smf3:
     primary_ipv6: "2001:4860:4860::8888"
     secondary_ipv4: "8.8.8.8"
     secondary_ipv6: "2001:4860:4860::8888"
+
   # the DNN you configure here should be configured in "dnns"
   # follows the SmfInfo datatype from 3GPP TS 29.510
   smf_info:
     sNssaiSmfInfoList:
-      - sNssai: *embb_slice3
+      - sNssai: *embb_slice1
         dnnSmfInfoList:
           - dnn: "oai"
   local_subscription_infos:
-    - single_nssai: *embb_slice3
+    - single_nssai: *embb_slice1
       dnn: "oai"
       qos_profile:
         5qi: 5
