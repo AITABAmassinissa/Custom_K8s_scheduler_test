@@ -12,7 +12,7 @@ configuration:
         nsiId: '11'
         nrfNfMgtUri: http://oai-cn5g-nrf-10.fr:8080/nnrf-nfm/v1/nf-instances
     - snssai:
-        sst: 1
+        sst: 128
         sd: '000001'
       nsiInformationList:
         nrfId: http://oai-cn5g-nrf-10.fr:8080/nnrf-disc/v1/nf-instances
@@ -64,7 +64,7 @@ configuration:
       supportedSnssaiList:
       - sst: 222
         sd: '00007B'
-      - sst: 1
+      - sst: 128
         sd: '000001'
       - sst: 2
     - tai:
@@ -82,7 +82,7 @@ configuration:
           mcc: 208
           mnc: 97
         sNssaiList:
-        - sst: 1
+        - sst: 128
           sd: '000003'
     - tai:
         plmnId:

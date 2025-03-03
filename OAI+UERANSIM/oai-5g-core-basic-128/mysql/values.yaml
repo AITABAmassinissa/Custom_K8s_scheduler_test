@@ -95,14 +95,14 @@ livenessProbe:
   initialDelaySeconds: 50
   periodSeconds: 15
   timeoutSeconds: 10
-  successThreshold: 128
+  successThreshold: 1
   failureThreshold: 3
 
 readinessProbe:
   initialDelaySeconds: 10
   periodSeconds: 15
   timeoutSeconds: 5
-  successThreshold: 128
+  successThreshold: 1
   failureThreshold: 3
 
 ## Persist data to a persistent volume
