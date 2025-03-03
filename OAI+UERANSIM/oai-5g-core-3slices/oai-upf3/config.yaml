@@ -68,10 +68,10 @@ upf3:
     sNssaiUpfInfoList:
     - sNssai: *embb_slice3
       dnnUpfInfoList:
-        - dnn: oaiii
+        - dnn: oaii
 
 ## DNN configuration
 dnns:
-  - dnn: "oaiii"
+  - dnn: "oaii"
     pdu_session_type: "IPV4"
     ipv4_subnet: "12.1.1.128/25"
