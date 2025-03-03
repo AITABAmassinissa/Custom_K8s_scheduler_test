@@ -24,9 +24,9 @@ http_version: 2
 ## Defines YAML anchors, which are reused in the config file
 snssais:
   - &embb_slice1
-    sst: 1
-  - &embb_slice2
     sst: 128
+  - &embb_slice2
+    sst: 1
   - &embb_slice3
     sst: 130
 
