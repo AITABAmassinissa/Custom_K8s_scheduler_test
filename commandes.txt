@@ -12,5 +12,7 @@ helm install basic oai-5g-core-basic-128/oai-5g-basic/ -n oai
 
 ssh yasser@157.159.68.53
 
+ssh yasser@157.159.68.118
+
 
 
