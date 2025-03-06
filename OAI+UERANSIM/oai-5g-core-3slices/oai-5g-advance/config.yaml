@@ -310,7 +310,7 @@ upf:
     sNssaiUpfInfoList:
     - sNssai: *embb_slice1
       dnnUpfInfoList:
-        - dnn: oai
+        - dnn: default
 upf2:
   support_features:
     enable_bpf_datapath: no    # If "on": BPF is used as datapath else simpleswitch is used, DEFAULT= off
@@ -333,7 +333,7 @@ upf3:
         - dnn: oai
 ## DNN configuration
 dnns:
-  - dnn: "oai"
+  - dnn: "default"
     pdu_session_type: "IPV4"
     ipv4_subnet: "12.1.1.0/24"
   - dnn: "oai"
