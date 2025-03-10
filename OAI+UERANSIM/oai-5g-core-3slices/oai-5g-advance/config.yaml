@@ -49,7 +49,7 @@ nfs:
       interface_name: eth0
     n4:
       interface_name: eth0
-      port: 8805
+      port: 8806
   smf3:
     host: oai-smf3
     sbi:
@@ -58,7 +58,7 @@ nfs:
       interface_name: eth0
     n4:
       interface_name: eth0
-      port: 8805
+      port: 8807
   lmf:
     host: oai-lmf
     sbi:
@@ -93,7 +93,7 @@ nfs:
       port: 2152
     n4:
       interface_name: eth0
-      port: 8805
+      port: 8806
     n6:
       interface_name: eth0
     n9:
@@ -110,7 +110,7 @@ nfs:
       port: 2152
     n4:
       interface_name: eth0
-      port: 8805
+      port: 8807
     n6:
       interface_name: eth0
     n9:
@@ -248,10 +248,10 @@ smf2:
     sNssaiSmfInfoList:
       - sNssai: *embb_slice2
         dnnSmfInfoList:
-          - dnn: "oai"
+          - dnn: "oai.ipv4"
   local_subscription_infos:
     - single_nssai: *embb_slice2
-      dnn: "oai"
+      dnn: "oai.ipv4"
       qos_profile:
         5qi: 5
         session_ambr_ul: "200Mbps"
@@ -320,7 +320,7 @@ upf2:
     sNssaiUpfInfoList:
     - sNssai: *embb_slice2
       dnnUpfInfoList:
-        - dnn: oai
+        - dnn: oai.ipv4
 upf3:
   support_features:
     enable_bpf_datapath: no    # If "on": BPF is used as datapath else simpleswitch is used, DEFAULT= off
@@ -336,7 +336,7 @@ dnns:
   - dnn: "default"
     pdu_session_type: "IPV4"
     ipv4_subnet: "12.1.1.0/24"
-  - dnn: "oai"
+  - dnn: "oai.ipv4"
     pdu_session_type: "IPV4"
     ipv4_subnet: "12.1.2.0/24"
   - dnn: "oai"

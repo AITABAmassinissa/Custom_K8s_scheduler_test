@@ -42,7 +42,7 @@ nfs:
       interface_name: eth0
     n4:
       interface_name: eth0
-      port: 8805
+      port: 8807
   udm:
     host: oai-udm
     sbi:
