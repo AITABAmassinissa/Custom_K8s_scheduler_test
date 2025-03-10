@@ -21,12 +21,6 @@ serviceAccount:
   # If not set and create is true, a name is generated using the fullname template
   name: "oai-traffic-server"
 
-multus:
-  create: false
-  ipAdd: "172.21.6.99"
-  netmask: "22"
-  defaultGateway: "172.21.7.254"
-  hostInterface: "bond0"      # Interface of the host machine on which this pod will be scheduled
 
 config:
   ueroute: 12.1.1.0/24
