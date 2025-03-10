@@ -112,8 +112,8 @@ amf:
       mnc: 01
       tac: 0x0001
       nssai:
-        - *embb_slice1
         - *embb_slice2
+        - *embb_slice1
         - *embb_slice3
   supported_integrity_algorithms:
     - "NIA0"
