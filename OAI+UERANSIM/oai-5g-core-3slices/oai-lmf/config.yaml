@@ -82,6 +82,9 @@ smf:
     - host: oai-upf
       config:
         enable_usage_reporting: no
+  n4:
+    interface_name: eth0
+    port: 8805  # Port unique pour SMF1    
   ue_dns:
     primary_ipv4: "10.3.2.200"
     primary_ipv6: "2001:4860:4860::8888"
@@ -112,6 +115,9 @@ smf2:
     - host: oai-upf2
       config:
         enable_usage_reporting: no
+  n4:
+    interface_name: eth0
+    port: 8806  # Port unique pour SMF2
   ue_dns:
     primary_ipv4: "10.3.2.200"
     primary_ipv6: "2001:4860:4860::8888"
@@ -142,6 +148,9 @@ smf3:
     - host: oai-upf3
       config:
         enable_usage_reporting: no
+  n4:
+    interface_name: eth0
+    port: 8807  # Port unique pour SMF3
   ue_dns:
     primary_ipv4: "10.3.2.200"
     primary_ipv6: "2001:4860:4860::8888"
