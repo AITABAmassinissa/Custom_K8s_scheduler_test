@@ -32,7 +32,7 @@ appVersion: v2.1.0
 
 keywords:
   - 5GCN
-  - NRF2
+  - NRF
 
 sources:
   - https://gitlab.eurecom.fr/oai/cn5g/oai-cn5g-nrf

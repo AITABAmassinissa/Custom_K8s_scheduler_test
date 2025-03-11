@@ -24,9 +24,9 @@ http_version: 2  # allowed value 1 and 2, make sure all NFs use the same HTTP ve
 ## only hex values are supported for sst
 snssais:
   - &embb_slice1
-    sst: 128
-  - &embb_slice2
     sst: 1
+  - &embb_slice2
+    sst: 128
   - &embb_slice3
     sst: 130
 
@@ -112,8 +112,8 @@ amf:
       mnc: 01
       tac: 0x0001
       nssai:
-        - *embb_slice2
         - *embb_slice1
+        - *embb_slice2
         - *embb_slice3
   supported_integrity_algorithms:
     - "NIA0"
