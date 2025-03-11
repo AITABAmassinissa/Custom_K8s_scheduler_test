@@ -41,7 +41,7 @@ multus:
   defaultGateway: ""
   n4Interface:
     create: false
-    ipAdd: "192.168.24.3"
+    ipAdd: "192.168.24.4"
     netmask: "24"
     #name inside the pod is hardcoded right now
     #name: "n4"

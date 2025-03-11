@@ -40,7 +40,7 @@ multus:
   defaultGateway: ""
   n3Interface: # use this interface if using one interface for all 3GPP interfaces
     create: false
-    ipAdd: "172.21.12.95"
+    ipAdd: "172.21.12.97"
     netmask: "22"
     name: "n3"
     ## If you do not have a gateway leave the field empty
@@ -50,7 +50,7 @@ multus:
     hostInterface: "bond0"
   n4Interface:
     create: false
-    ipAdd: "192.168.24.2"
+    ipAdd: "192.168.24.7"
     netmask: "24"
     name: "n4"
     ## If you do not have a gateway leave the field empty
