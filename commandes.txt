@@ -5,8 +5,8 @@ helm dependency update oai-5g-core-basic-cleaned/oai-5g-basic/
 helm install basic oai-5g-core-basic-cleaned/oai-5g-basic/ -n oai
 
 
-helm dependency update oai-5g-core-basic-128/oai-5g-basic/
-helm install basic oai-5g-core-basic-128/oai-5g-basic/ -n oai
+helm dependency update oai-5g-core-basic/oai-5g-basic/
+helm install basic oai-5g-core-basic/oai-5g-basic/ -n oai
 
 
 
