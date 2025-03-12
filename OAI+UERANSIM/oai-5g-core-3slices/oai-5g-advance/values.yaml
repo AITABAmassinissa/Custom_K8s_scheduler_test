@@ -292,9 +292,9 @@ oai-traffic-server:
   config:
     ueroute: 12.1.1.0/24
     upfHosts:
-      - oai-upf-1
-      - oai-upf-2
-      - oai-upf-3
+      - oai-upf
+      - oai-upf2
+      - oai-upf3
     routeInterface: eth0
     noOfIperf3Server: 2
   resources:
