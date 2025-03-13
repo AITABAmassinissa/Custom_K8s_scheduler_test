@@ -5,12 +5,12 @@ info:
 configuration:
   nsiInfoList:
     - snssai:
-        sst: 1
+        sst: 128
       nsiInformationList:
         nrfId: http://oai-nrf:80/nnrf-disc/v1/nf-instances
         nsiId: '11'
     - snssai:
-        sst: 128
+        sst: 1
       nsiInformationList:
         nrfId: http://oai-nrf:80/nnrf-disc/v1/nf-instances
         nsiId: '12'
@@ -26,8 +26,8 @@ configuration:
           mnc: '01'
         tac: '0x0001'
       supportedSnssaiList:
-      - sst: 1
       - sst: 128
+      - sst: 1
       - sst: 130
   amfInfoList:
     - targetAmfSet: 001-01-128-01
@@ -42,6 +42,8 @@ configuration:
                   mnc: 01
                 tac: 0x0001
               supportedSnssaiList:
-                - sst: 1
                 - sst: 128
+                - sst: 1
                 - sst: 130
+
+
