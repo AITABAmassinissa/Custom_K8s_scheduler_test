@@ -34,7 +34,7 @@ nfs:
     sbi:
       port: 80
     n4:
-      port: 8807
+      port: 8805
   upf3:
     host: oai-upf3
     sbi:
@@ -46,7 +46,7 @@ nfs:
       port: 2152
     n4:
       interface_name: eth0
-      port: 8807
+      port: 8805
     n6:
       interface_name: eth0
     n9:

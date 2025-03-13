@@ -5,7 +5,7 @@ global:
   waitForNRF: true
   waitForUDR: true
   http2Param: "--http2-prior-knowledge"  # if waitForNRF is true and http2 is used for all NF then this param is needed
-  timeout: 3
+  timeout: 1
 mysql:
   enabled: true
   imagePullPolicy: IfNotPresent
@@ -196,7 +196,7 @@ oai-upf2:
     defaultGateway: ""
     n3Interface:
       create: false
-      ipAdd: "172.21.8.97"
+      ipAdd: "172.21.8.95"
       netmask: "22"
       name: "n3"
       ## If you do not have a gateway leave the field empty
@@ -207,7 +207,7 @@ oai-upf2:
     ## For n4 it is better to re-use eth0 interface inside the pod (primary CNI of Kubernetes)
     n4Interface:
       create: false
-      ipAdd: "192.168.24.6"
+      ipAdd: "192.168.24.2"
       netmask: "24"
       name: "n4"
       ## If you do not have a gateway leave the field empty
@@ -245,7 +245,7 @@ oai-upf3:
     defaultGateway: ""
     n3Interface:
       create: false
-      ipAdd: "172.21.8.98"
+      ipAdd: "172.21.8.95"
       netmask: "22"
       name: "n3"
       ## If you do not have a gateway leave the field empty
@@ -256,7 +256,7 @@ oai-upf3:
     ## For n4 it is better to re-use eth0 interface inside the pod (primary CNI of Kubernetes)
     n4Interface:
       create: false
-      ipAdd: "192.168.24.7"
+      ipAdd: "192.168.24.2"
       netmask: "24"
       name: "n4"
       ## If you do not have a gateway leave the field empty
@@ -291,7 +291,7 @@ oai-traffic-server:
     hostInterface: "bond0"  # Interface of the host machine on which this pod will be scheduled
   config:
     ueroute: 12.1.1.0/24
-    upfHosts: oai-upf2
+    upfHost: oai-upf
     routeInterface: eth0
     noOfIperf3Server: 2
   resources:
@@ -338,7 +338,7 @@ oai-smf2:
     defaultGateway: ""
     n4Interface:
       create: false
-      ipAdd: "192.168.24.4"
+      ipAdd: "192.168.24.3"
       netmask: "24"
       name: "n4"
       ## If you do not have a gateway leave the field empty
@@ -359,7 +359,7 @@ oai-smf3:
     defaultGateway: ""
     n4Interface:
       create: false
-      ipAdd: "192.168.24.5"
+      ipAdd: "192.168.24.3"
       netmask: "24"
       name: "n4"
       ## If you do not have a gateway leave the field empty
