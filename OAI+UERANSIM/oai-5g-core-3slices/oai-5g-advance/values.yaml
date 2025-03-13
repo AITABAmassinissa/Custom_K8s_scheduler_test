@@ -291,10 +291,7 @@ oai-traffic-server:
     hostInterface: "bond0"  # Interface of the host machine on which this pod will be scheduled
   config:
     ueroute: 12.1.1.0/24
-    upfHosts:
-      - oai-upf
-      - oai-upf2
-      - oai-upf3
+    upfHosts: oai-upf2
     routeInterface: eth0
     noOfIperf3Server: 2
   resources:
