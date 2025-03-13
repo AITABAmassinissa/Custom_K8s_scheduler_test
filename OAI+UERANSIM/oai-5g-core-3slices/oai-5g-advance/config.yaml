@@ -248,10 +248,10 @@ smf2:
     sNssaiSmfInfoList:
       - sNssai: *embb_slice2
         dnnSmfInfoList:
-          - dnn: "oai2"
+          - dnn: "default"
   local_subscription_infos:
     - single_nssai: *embb_slice2
-      dnn: "oai2"
+      dnn: "default"
       qos_profile:
         5qi: 5
         session_ambr_ul: "200Mbps"
@@ -320,7 +320,7 @@ upf2:
     sNssaiUpfInfoList:
     - sNssai: *embb_slice2
       dnnUpfInfoList:
-        - dnn: oai2
+        - dnn: default
 upf3:
   support_features:
     enable_bpf_datapath: no    # If "on": BPF is used as datapath else simpleswitch is used, DEFAULT= off
@@ -336,9 +336,9 @@ dnns:
   - dnn: "oai"
     pdu_session_type: "IPV4"
     ipv4_subnet: "12.1.1.0/24"
-  - dnn: "oai2"
+  - dnn: "default"
     pdu_session_type: "IPV4"
-    ipv4_subnet: "12.1.2.0/24"
+    ipv4_subnet: "12.1.1.0/24"
   - dnn: "oai3"
     pdu_session_type: "IPV4"
     ipv4_subnet: "12.1.3.0/24"
