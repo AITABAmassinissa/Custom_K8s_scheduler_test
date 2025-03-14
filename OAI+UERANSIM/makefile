@@ -12,9 +12,7 @@ clean:
 	-(! (pgrep -f sim.py)) ||sudo kill -9 $$(pgrep -f sim.py)
 
 multus:
-	kubectl delete ns oai --ignore-not-found=true
 	kubectl delete -f ./multus-cni/deployments/multus-daemonset-thick.yml
-	sleep 8
+	kubectl delete ns oai --ignore-not-found=true
 	kubectl apply -f ./multus-cni/deployments/multus-daemonset-thick.yml
-	sleep 8
 	kubectl create ns oai
