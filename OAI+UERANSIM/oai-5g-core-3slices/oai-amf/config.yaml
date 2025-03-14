@@ -45,8 +45,8 @@ nfs:
     sbi:
       port: 80
       api_version: v1
-  smf2:
-    host: oai-smf2
+  smff:
+    host: oai-smff
     sbi:
       port: 80
       api_version: v1
