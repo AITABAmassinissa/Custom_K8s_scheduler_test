@@ -24,7 +24,7 @@ http_version: 2
 ## Defines YAML anchors, which are reused in the config file
 snssais:
   - &embb_slice1
-    sst: 3
+    sst: 1
 
 ############## SBI Interfaces
 ### Each NF takes its local SBI interfaces and remote interfaces from here, unless it gets them using NRF discovery mechanisms
@@ -78,10 +78,10 @@ smf:
     sNssaiSmfInfoList:
       - sNssai: *embb_slice1
         dnnSmfInfoList:
-          - dnn: "oai4"
+          - dnn: "oai1"
   local_subscription_infos:
     - single_nssai: *embb_slice1
-      dnn: "oai4"
+      dnn: "oai1"
       qos_profile:
         5qi: 5
         session_ambr_ul: "200Mbps"
@@ -89,6 +89,6 @@ smf:
 
 ## DNN configuration
 dnns:
-  - dnn: "oai4"
+  - dnn: "oai1"
     pdu_session_type: "IPV4"
     ipv4_subnet: "12.1.1.0/24"
