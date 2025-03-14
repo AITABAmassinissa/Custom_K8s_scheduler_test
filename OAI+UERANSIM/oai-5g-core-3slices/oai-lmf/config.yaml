@@ -16,7 +16,7 @@ log_level:
 
 # If you enable registration, the other NFs will use the NRF discovery mechanism
 register_nf:
-  general: no
+  general: yes
 
 http_version: 2
 
@@ -24,9 +24,9 @@ http_version: 2
 ## Defines YAML anchors, which are reused in the config file
 snssais:
   - &embb_slice1
-    sst: 128
-  - &embb_slice1
     sst: 1
+  - &embb_slice1
+    sst: 128
   - &embb_slice1
     sst: 130
 
@@ -123,10 +123,10 @@ smf2:
     sNssaiSmfInfoList:
       - sNssai: *embb_slice2
         dnnSmfInfoList:
-          - dnn: "default"
+          - dnn: "oai2"
   local_subscription_infos:
     - single_nssai: *embb_slice2
-      dnn: "default"
+      dnn: "oai2"
       qos_profile:
         5qi: 5
         session_ambr_ul: "200Mbps"
@@ -166,9 +166,9 @@ dnns:
   - dnn: "oai"
     pdu_session_type: "IPV4"
     ipv4_subnet: "12.1.1.0/24"
-  - dnn: "default"
+  - dnn: "oai2"
     pdu_session_type: "IPV4"
-    ipv4_subnet: "12.1.1.0/24"
+    ipv4_subnet: "12.1.2.0/24"
   - dnn: "oai3"
     pdu_session_type: "IPV4"
     ipv4_subnet: "12.1.3.0/24"

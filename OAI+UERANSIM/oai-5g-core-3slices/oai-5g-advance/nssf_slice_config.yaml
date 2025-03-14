@@ -1,16 +1,16 @@
 # Reference:- TS 29.531 R16.0.0., Section- 6.1.6 Data Model 
 info:
-  version: 2.0.0
-  description: OAI-NSSF Release v2.1.0
+  version: 1.4.0
+  description: OAI-NSSF Release v1.4.0
 configuration:
   nsiInfoList:
     - snssai:
-        sst: 128
+        sst: 1
       nsiInformationList:
         nrfId: http://oai-nrf:80/nnrf-disc/v1/nf-instances
         nsiId: '11'
     - snssai:
-        sst: 1
+        sst: 128
       nsiInformationList:
         nrfId: http://oai-nrf:80/nnrf-disc/v1/nf-instances
         nsiId: '12'
@@ -26,13 +26,13 @@ configuration:
           mnc: '01'
         tac: '0x0001'
       supportedSnssaiList:
-      - sst: 128
       - sst: 1
+      - sst: 128
       - sst: 130
   amfInfoList:
-    - targetAmfSet: 001-01-128-01
-      nrfAmfSet: http://oai-cn5g-nrf.fr:80/nnrf-disc/v1/nf-instances
-      nrfAmfSetNfMgtUri: http://oai-cn5g-nrf.fr:80/nnrf-nfm/v1/nf-instances
+    - targetAmfSet: oai5gcn.mcc001.mnc01.regionid128.setid1.3gppnetwork.org
+      nrfAmfSet: http://oai-cn5g-nrf.fr:8080/nnrf-disc/v1/nf-instances
+      nrfAmfSetNfMgtUri: http://oai-cn5g-nrf.fr:8080/nnrf-nfm/v1/nf-instances
       amfList:
         - nfId: 405e8251-cc5a-45dd-a494-efb9eaf1cd58
           supportedNssaiAvailabilityData:
@@ -45,5 +45,36 @@ configuration:
                 - sst: 128
                 - sst: 1
                 - sst: 130
-
-
+        - nfId: 405e8251-cc5a-45dd-a494-efb9eaf1cd68
+          supportedNssaiAvailabilityData:
+              tai:
+                plmnId:
+                  mcc: 001
+                  mnc: 01
+                tac: 0x0001
+              supportedSnssaiList:
+                - sst: 130
+                - sst: 131
+                  sd: "000083"
+              taiList:
+                - tai:
+                    plmnId:
+                      mcc: 001
+                      mnc: 01
+                    tac: 0x0001
+                  supportedSnssaiList:
+                    - sst: 132
+                      sd: "000084"
+    - targetAmfSet: oai5gcn.mcc001.mnc01.regionid128.setid2.3gppnetwork.org
+      nrfAmfSet: http://oai-cn5g-nrf.fr:8080/nnrf-disc/v1/nf-instances
+      nrfAmfSetNfMgtUri: http://oai-cn5g-nrf.fr:8080/nnrf-nfm/v1/nf-instances
+      amfList:
+        - nfId: 405e8251-cc5a-45dd-a494-efb9eaf1cd78
+          supportedNssaiAvailabilityData:
+              tai:
+                plmnId:
+                  mcc: 001
+                  mnc: 01
+                tac: 0x0001
+              supportedSnssaiList:
+                - sst: 133
