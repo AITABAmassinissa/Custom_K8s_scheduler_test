@@ -16,3 +16,8 @@ multus:
 	kubectl delete ns oai --ignore-not-found=true
 	kubectl apply -f ./multus-cni/deployments/multus-daemonset-thick.yml
 	kubectl create ns oai
+
+pull: 
+	git pull 
+	helm dependency update oai-5g-core-3slices/oai-5g-advance/
+	helm install basic oai-5g-core-3slices/oai-5g-advance/ -n oai
