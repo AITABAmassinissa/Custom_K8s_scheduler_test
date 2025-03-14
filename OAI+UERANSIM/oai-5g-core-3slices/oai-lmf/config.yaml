@@ -25,9 +25,9 @@ http_version: 2
 snssais:
   - &embb_slice1
     sst: 4
-  - &embb_slice1
+  - &embb_slice2
     sst: 2
-  - &embb_slice1
+  - &embb_slice3
     sst: 3
 
 ############## SBI Interfaces
