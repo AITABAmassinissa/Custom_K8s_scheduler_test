@@ -21,3 +21,6 @@ pull:
 	git pull 
 	helm dependency update oai-5g-core-3slices/oai-5g-advance/
 	helm install basic oai-5g-core-3slices/oai-5g-advance/ -n oai
+
+logs:
+	kubectl logs $(kubectl get pods -n oai --no-headers -o custom-columns=":metadata.name" | grep oai-nrf | head -n 1) -n oai | grep OAI-SMF
