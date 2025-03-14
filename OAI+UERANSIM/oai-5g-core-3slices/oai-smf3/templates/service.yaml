@@ -3,14 +3,14 @@ kind: Service
 metadata:
   name: {{ .Chart.Name }}
   labels:
-    {{- include "oai-smf3.labels" . | nindent 4 }}
+    {{- include "oai-smf.labels" . | nindent 4 }}
 spec:
   type: ClusterIP
   {{- if .Values.global }}{{ if not .Values.global.clusterIpServiceIpAllocation }}
   clusterIP: None
   {{- end }}{{ end }}
   selector:
-    {{- include "oai-smf3.selectorLabels" . | nindent 4 }}
+    {{- include "oai-smf.selectorLabels" . | nindent 4 }}
   ports:
     {{- if not .Values.multus.create }}
     - name: oai-smf3

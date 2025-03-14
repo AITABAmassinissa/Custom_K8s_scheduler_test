@@ -108,7 +108,7 @@ spec:
         {{- end}}
         {{- end}}
     {{- end }}
-      - name: upf
+      - name: upf2
         image: "{{ .Values.nfimage.repository }}:{{ .Values.nfimage.version }}"
         imagePullPolicy: {{ .Values.nfimage.pullPolicy }}
         volumeMounts:

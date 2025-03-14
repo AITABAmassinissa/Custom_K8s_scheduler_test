@@ -61,7 +61,7 @@ spec:
         {{- end}}
         {{- end}}
     {{- end }}
-      - name: nrf
+      - name: nrf2
         image: "{{ .Values.nfimage.repository }}:{{ .Values.nfimage.version }}"
         volumeMounts:
           - mountPath: /openair-nrf/etc
