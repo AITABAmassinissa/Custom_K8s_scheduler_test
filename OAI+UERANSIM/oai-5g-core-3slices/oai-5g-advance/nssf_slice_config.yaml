@@ -10,7 +10,7 @@ configuration:
         nrfId: http://oai-nrf:80/nnrf-disc/v1/nf-instances
         nsiId: '11'
     - snssai:
-        sst: 128
+        sst: 3
       nsiInformationList:
         nrfId: http://oai-nrf:80/nnrf-disc/v1/nf-instances
         nsiId: '12'
