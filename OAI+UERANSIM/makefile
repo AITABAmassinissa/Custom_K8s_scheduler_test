@@ -22,5 +22,19 @@ pull:
 	helm dependency update oai-5g-core-3slices/oai-5g-advance/
 	helm install basic oai-5g-core-3slices/oai-5g-advance/ -n oai
 
-logs:
+nrf:
 	kubectl logs $$(kubectl get pods -n oai --no-headers -o custom-columns=":metadata.name" | grep oai-nrf | head -n 1) -n oai | grep OAI-SMF
+nrf2:
+	kubectl logs $$(kubectl get pods -n oai --no-headers -o custom-columns=":metadata.name" | grep oai-nrf2 | head -n 1) -n oai
+smf:
+	kubectl logs $$(kubectl get pods -n oai --no-headers -o custom-columns=":metadata.name" | grep oai-smf | head -n 1) -n oai
+smf2:
+	kubectl logs $$(kubectl get pods -n oai --no-headers -o custom-columns=":metadata.name" | grep oai-smf2 | head -n 1) -n oai
+smf3:
+	kubectl logs $$(kubectl get pods -n oai --no-headers -o custom-columns=":metadata.name" | grep oai-smf3 | head -n 1) -n oai
+upf:
+	kubectl logs $$(kubectl get pods -n oai --no-headers -o custom-columns=":metadata.name" | grep oai-upf | head -n 1) -n oai
+upf2:
+	kubectl logs $$(kubectl get pods -n oai --no-headers -o custom-columns=":metadata.name" | grep oai-upf2 | head -n 1) -n oai
+upf3:
+	kubectl logs $$(kubectl get pods -n oai --no-headers -o custom-columns=":metadata.name" | grep oai-upf3 | head -n 1) -n oai
