@@ -29,8 +29,8 @@ snssais:
 ############## SBI Interfaces
 ### Each NF takes its local SBI interfaces and remote interfaces from here, unless it gets them using NRF discovery mechanisms
 nfs:
-  smff:
-    host: oai-smff
+  smf2:
+    host: oai-smf2
     sbi:
       port: 80
     n4:
