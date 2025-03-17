@@ -92,7 +92,7 @@ spec:
         {{- end}}
         {{- end}}
     {{- end }}
-      - name: smf
+      - name: smf2
         image: "{{ .Values.nfimage.repository }}:{{ .Values.nfimage.version }}"
         imagePullPolicy: {{ .Values.nfimage.pullPolicy }}
         volumeMounts:
@@ -130,7 +130,7 @@ spec:
             memory: {{ .Values.resources.limits.nf.memory | quote }}
             cpu: {{ .Values.resources.limits.nf.cpu | quote }}
         {{- end}}
-        {{- if .Values.start.smf}}
+        {{- if .Values.start.smf2}}
         {{- else}}
         command:
           - /bin/sleep

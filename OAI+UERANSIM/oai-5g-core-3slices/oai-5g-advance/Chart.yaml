@@ -10,7 +10,7 @@ keywords:
   - 5GCN
   - SLICING
   - AMF
-  - SMF
+  - SMF1
   - SMF2
   - NRF
   - UDM
@@ -59,7 +59,7 @@ dependencies:
   name: oai-smf2
   repository: "file://../oai-smf2"
   version: v2.1.0
-- condition: oai-smf.enabled
+- condition: oai-smf1.enabled
   name: oai-smf1
   repository: "file://../oai-smf1"
   version: v2.1.0
