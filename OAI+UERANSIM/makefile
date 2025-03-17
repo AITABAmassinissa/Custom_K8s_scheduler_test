@@ -16,7 +16,10 @@ multus:
 	kubectl delete ns oai --ignore-not-found=true
 	kubectl apply -f ./multus-cni/deployments/multus-daemonset-thick.yml
 	kubectl create ns oai
-
+push:
+	git add .
+	git commit -m "p" 
+	git push
 pull: 
 	git pull 
 	helm dependency update oai-5g-core-3slices/oai-5g-advance/
@@ -26,6 +29,8 @@ nrf:
 	kubectl logs $$(kubectl get pods -n oai --no-headers -o custom-columns=":metadata.name" | grep oai-nrf | head -n 1) -n oai | grep OAI-SMF
 nrf2:
 	kubectl logs $$(kubectl get pods -n oai --no-headers -o custom-columns=":metadata.name" | grep oai-nrf2 | head -n 1) -n oai
+amf:
+	kubectl logs $$(kubectl get pods -n oai --no-headers -o custom-columns=":metadata.name" | grep oai-amf | head -n 1) -n oai
 smf:
 	kubectl logs $$(kubectl get pods -n oai --no-headers -o custom-columns=":metadata.name" | grep oai-smf | head -n 1) -n oai
 smf2:
