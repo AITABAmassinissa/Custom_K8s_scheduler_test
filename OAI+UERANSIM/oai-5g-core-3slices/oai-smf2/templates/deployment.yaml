@@ -118,7 +118,7 @@ spec:
         {{- end}}
         ports:
         - containerPort: {{ .Values.exposedPorts.n4 }}
-          name: oai-smf22
+          name: oai-smf2
         - containerPort: {{ .Values.exposedPorts.sbi }}
           name: http
         {{- if .Values.resources.define}}
