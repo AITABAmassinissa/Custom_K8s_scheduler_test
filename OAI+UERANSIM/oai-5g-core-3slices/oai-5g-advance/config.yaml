@@ -32,15 +32,6 @@ nfs:
     n2:
       interface_name: eth0
       port: 38412
-  smf:
-    host: oai-smf
-    sbi:
-      port: 80
-      api_version: v1
-      interface_name: eth0
-    n4:
-      interface_name: eth0
-      port: 8805
   smf2:
     host: oai-smf2
     sbi:
@@ -50,6 +41,16 @@ nfs:
     n4:
       interface_name: eth0
       port: 8805
+  smf:
+    host: oai-smf
+    sbi:
+      port: 80
+      api_version: v1
+      interface_name: eth0
+    n4:
+      interface_name: eth0
+      port: 8805
+
   lmf:
     host: oai-lmf
     sbi:

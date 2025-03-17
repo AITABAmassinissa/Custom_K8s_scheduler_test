@@ -55,13 +55,13 @@ dependencies:
   name: oai-amf
   repository: "file://../oai-amf"
   version: v2.1.0
-- condition: oai-smf.enabled
-  name: oai-smf
-  repository: "file://../oai-smf"
-  version: v2.1.0
 - condition: oai-smf2.enabled
   name: oai-smf2
   repository: "file://../oai-smf2"
+  version: v2.1.0
+- condition: oai-smf.enabled
+  name: oai-smf
+  repository: "file://../oai-smf"
   version: v2.1.0
 - condition: oai-upf.enabled
   name: oai-upf
