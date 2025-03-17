@@ -2,7 +2,7 @@
 {{/*
 Expand the name of the chart.
 */}}
-{{- define "oai-smf.name" -}}
+{{- define "oai-smf1.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 
@@ -11,7 +11,7 @@ Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 If release name contains chart name it will be used as a full name.
 */}}
-{{- define "oai-smf.fullname" -}}
+{{- define "oai-smf1.fullname" -}}
 {{- if .Values.fullnameOverride -}}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" -}}
 {{- else -}}
@@ -27,16 +27,16 @@ If release name contains chart name it will be used as a full name.
 {{/*
 Create chart name and version as used by the chart label.
 */}}
-{{- define "oai-smf.chart" -}}
+{{- define "oai-smf1.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 
 {{/*
 Common labels
 */}}
-{{- define "oai-smf.labels" -}}
-helm.sh/chart: {{ include "oai-smf.chart" . }}
-{{ include "oai-smf.selectorLabels" . }}
+{{- define "oai-smf1.labels" -}}
+helm.sh/chart: {{ include "oai-smf1.chart" . }}
+{{ include "oai-smf1.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -46,17 +46,17 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 Selector labels
 */}}
-{{- define "oai-smf.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "oai-smf.name" . }}
+{{- define "oai-smf1.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "oai-smf1.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end -}}
 
 {{/*
 Create the name of the service account to use
 */}}
-{{- define "oai-smf.serviceAccountName" -}}
+{{- define "oai-smf1.serviceAccountName" -}}
 {{- if .Values.serviceAccount.create -}}
-    {{ default (include "oai-smf.fullname" .) .Chart.Name }}
+    {{ default (include "oai-smf1.fullname" .) .Chart.Name }}
 {{- else -}}
     {{ default "default" .Chart.Name }}
 {{- end -}}

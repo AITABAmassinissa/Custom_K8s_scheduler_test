@@ -60,8 +60,8 @@ dependencies:
   repository: "file://../oai-smf2"
   version: v2.1.0
 - condition: oai-smf.enabled
-  name: oai-smf
-  repository: "file://../oai-smf"
+  name: oai-smf1
+  repository: "file://../oai-smf1"
   version: v2.1.0
 - condition: oai-upf.enabled
   name: oai-upf

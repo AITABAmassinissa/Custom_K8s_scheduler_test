@@ -34,8 +34,8 @@ nfs:
     sbi:
       port: 80
       api_version: v1
-  smf:
-    host: oai-smf
+  smf1:
+    host: oai-smf1
     sbi:
       port: 80
       api_version: v1
@@ -55,7 +55,7 @@ nfs:
       api_version: v1
 
 ############## NF-specific configuration
-smf:
+smf1:
   ue_mtu: 1500
   support_features:
     use_local_subscription_info: yes # Use infos from local_subscription_info or from UDM
