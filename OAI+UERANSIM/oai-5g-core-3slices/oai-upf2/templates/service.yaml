@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: {{ .Chart.Name }}
   labels:
-    {{- include "oai-upf.labels" . | nindent 4 }}
+    {{- include "oai-upf2.labels" . | nindent 4 }}
 spec:
   type: ClusterIP
   {{- if .Values.global }}{{ if not .Values.global.clusterIpServiceIpAllocation }}
@@ -26,4 +26,4 @@ spec:
       targetPort: {{ .Values.exposedPorts.sbi }}
       protocol: TCP
   selector:
-    {{- include "oai-upf.selectorLabels" . | nindent 4 }}
+    {{- include "oai-upf2.selectorLabels" . | nindent 4 }}
