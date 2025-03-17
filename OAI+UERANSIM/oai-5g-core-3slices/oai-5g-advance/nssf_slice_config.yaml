@@ -5,15 +5,15 @@ info:
 configuration:
   nsiInfoList:
     - snssai:
-        sst: 1
-      nsiInformationList:
-        nrfId: http://oai-nrf:80/nnrf-disc/v1/nf-instances
-        nsiId: '11'
-    - snssai:
         sst: 2
       nsiInformationList:
         nrfId: http://oai-nrf:80/nnrf-disc/v1/nf-instances
         nsiId: '12'
+    - snssai:
+        sst: 1
+      nsiInformationList:
+        nrfId: http://oai-nrf:80/nnrf-disc/v1/nf-instances
+        nsiId: '11'
     - snssai:
         sst: 3
       nsiInformationList:
@@ -26,8 +26,8 @@ configuration:
           mnc: '01'
         tac: '0x0001'
       supportedSnssaiList:
-      - sst: 1
       - sst: 2
+      - sst: 1
       - sst: 3
   amfInfoList:
     - targetAmfSet: oai5gcn.mcc001.mnc01.regionid3.setid1.3gppnetwork.org
@@ -42,8 +42,8 @@ configuration:
                   mnc: 01
                 tac: 0x0001
               supportedSnssaiList:
-                - sst: 1
                 - sst: 2
+                - sst: 1
                 - sst: 3
         - nfId: 405e8251-cc5a-45dd-a494-efb9eaf1cd68
           supportedNssaiAvailabilityData:
