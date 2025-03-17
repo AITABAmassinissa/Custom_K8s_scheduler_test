@@ -18,7 +18,7 @@ configuration:
         sst: 3
       nsiInformationList:
         nrfId: http://oai-nrf2:80/nnrf-disc/v1/nf-instances
-        nsiId: '12'
+        nsiId: '13'
   taInfoList:
     - tai:
         plmnId:
