@@ -23,8 +23,8 @@ push:
 pull: 
 	git pull 
 	sleep 5
-	helm dependency update oai-5g-core/oai-5g-advance/
-	helm install basic oai-5g-core/oai-5g-advance/ -n oai
+	helm dependency update 5gc/oai-5g-advance/
+	helm install basic 5gc/oai-5g-advance/ -n oai
 
 nrf:
 	kubectl logs $$(kubectl get pods -n oai --no-headers -o custom-columns=":metadata.name" | grep oai-nrf | head -n 1) -n oai | grep OAI-SMF

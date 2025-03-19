@@ -4,10 +4,10 @@ namespace='oai'
 ip_adress="10.244.0.1"
 network="cni0"
 dnn=["oai","oai2","oai3"]
-gnbfiles=["OAI-gnb.yaml","OAI-gnb2.yaml","OAI-gnb3.yaml"]
+gnbfiles=["OAI-gnb.yaml"]
 uefiles=["OAI-ue.yaml","OAI-ue2.yaml","OAI-ue3.yaml"]
-nci=["0x000000010","0x000000020","0x000000030"]
-sst=[1,2,3]
+nci=["0x000000010"]
+sst=[1, 2, 3]
 
 retour=os.popen("kubectl get pods -n "+namespace).read() 
 amf_ip=os.popen("kubectl get pod -n "+namespace+" $(kubectl get pods --namespace "+namespace+" -l "+"app.kubernetes.io/name=oai-amf"+" -o jsonpath="+"{.items[0].metadata.name}"+") --template '{{.status.podIP}}'").read()
@@ -22,7 +22,6 @@ for i in range(0,len(dnn)):
     
     data[i] = data[i].replace("xxx", str(ip_adress))
     data[i] = data[i].replace("yyy", str(amf_ip))
-    data[i] = data[i].replace("zzz", str(sst[i]))
     data[i] = data[i].replace("ttt", str(nci[i]))
     with open(r'UERANSIM/build/'+gnbfiles[i], 'w') as file:
         file.write(data[i])
@@ -38,3 +37,4 @@ for i in range(0,len(dnn)):
         file.write(data[i])
         file.close()
 print("UERANSIM files configuration updated")
+
