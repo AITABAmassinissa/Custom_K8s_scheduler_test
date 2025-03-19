@@ -130,7 +130,7 @@ spec:
             memory: {{ .Values.resources.limits.nf.memory | quote }}
             cpu: {{ .Values.resources.limits.nf.cpu | quote }}
         {{- end}}
-        {{- if .Values.start.smf}}
+        {{- if .Values.start.smf1}}
         {{- else}}
         command:
           - /bin/sleep
