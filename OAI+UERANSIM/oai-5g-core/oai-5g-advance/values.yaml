@@ -193,7 +193,7 @@ oai-traffic-server:
       memory: 128Mi
   nodeSelector: {}
   nodeName: ""
-oai-smf:
+oai-smf1:
   enabled: true
   nfimage:  # image name either locally present or in a public/private repository
     repository: docker.io/oaisoftwarealliance/oai-smf           ## The image will be pulled from dockerhub

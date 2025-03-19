@@ -22,6 +22,7 @@ push:
 	git push
 pull: 
 	git pull 
+	sleep 5
 	helm dependency update oai-5g-core/oai-5g-advance/
 	helm install basic oai-5g-core/oai-5g-advance/ -n oai
 

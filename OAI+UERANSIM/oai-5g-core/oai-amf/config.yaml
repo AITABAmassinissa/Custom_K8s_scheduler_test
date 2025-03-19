@@ -41,8 +41,8 @@ nfs:
     n2:
       interface_name: eth0
       port: 38412
-  smf:
-    host: oai-smf
+  smf1:
+    host: oai-smf1
     sbi:
       port: 80
       api_version: v1

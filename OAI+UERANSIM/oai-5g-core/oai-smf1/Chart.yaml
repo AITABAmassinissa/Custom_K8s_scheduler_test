@@ -19,7 +19,7 @@
 #      contact@openairinterface.org
 ################################################################################
 apiVersion: v2
-name: oai-smf
+name: oai-smf1
 description: A Helm chart for SMF network function
 
 type: application
@@ -32,7 +32,7 @@ appVersion: v2.1.0
 
 keywords:
   - 5G
-  - SMF
+  - SMF1
 
 sources:
   - https://gitlab.eurecom.fr/oai/cn5g/oai-cn5g-smf

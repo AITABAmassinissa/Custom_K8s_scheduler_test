@@ -32,8 +32,8 @@ nfs:
     n2:
       interface_name: eth0
       port: 38412
-  smf:
-    host: oai-smf
+  smf1:
+    host: oai-smf1
     sbi:
       port: 80
       api_version: v1
@@ -138,7 +138,7 @@ amf:
     - "NEA1"
     - "NEA2"
 
-smf:
+smf1:
   ue_mtu: 1500
   support_features:
     use_local_subscription_info: no # Use infos from local_subscription_info or from UDM

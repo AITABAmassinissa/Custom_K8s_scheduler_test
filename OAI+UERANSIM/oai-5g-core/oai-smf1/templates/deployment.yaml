@@ -3,18 +3,18 @@ kind: Deployment
 metadata:
   name: {{ .Chart.Name }}
   labels:
-    {{- include "oai-smf.labels" . | nindent 4 }}
+    {{- include "oai-smf1.labels" . | nindent 4 }}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      {{- include "oai-smf.selectorLabels" . | nindent 6 }}
+      {{- include "oai-smf1.selectorLabels" . | nindent 6 }}
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
-        {{- include "oai-smf.selectorLabels" . | nindent 8 }}
+        {{- include "oai-smf1.selectorLabels" . | nindent 8 }}
     {{- if .Values.multus.n4Interface.create }}
       annotations:
         k8s.v1.cni.cncf.io/networks: >-
@@ -92,7 +92,7 @@ spec:
         {{- end}}
         {{- end}}
     {{- end }}
-      - name: smf
+      - name: smf1
         image: "{{ .Values.nfimage.repository }}:{{ .Values.nfimage.version }}"
         imagePullPolicy: {{ .Values.nfimage.pullPolicy }}
         volumeMounts:
@@ -118,7 +118,7 @@ spec:
         {{- end}}
         ports:
         - containerPort: {{ .Values.exposedPorts.n4 }}
-          name: oai-smf
+          name: oai-smf1
         - containerPort: {{ .Values.exposedPorts.sbi }}
           name: http
         {{- if .Values.resources.define}}
