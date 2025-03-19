@@ -6,7 +6,7 @@ network="cni0"
 dnn=["oai","oai2","oai3"]
 gnbfiles=["OAI-gnb.yaml"]
 uefiles=["OAI-ue.yaml","OAI-ue2.yaml","OAI-ue3.yaml"]
-nci=["0x000000010"]
+nci=["0x000000010","0x000000020","0x000000030"]
 sst=[1, 2, 3]
 
 retour=os.popen("kubectl get pods -n "+namespace).read() 
