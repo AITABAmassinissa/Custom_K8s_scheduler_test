@@ -14,5 +14,7 @@ ssh yasser@157.159.68.53
 
 ssh yasser@157.159.68.118
 
+grep -ril "smf" . | xargs code
+
 
 

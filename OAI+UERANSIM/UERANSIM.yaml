@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ueransim-pod
+  namespace: oai
+spec:
+  containers:
+    - name: ueransim-container
+      image: docker.io/maitaba/ueransim:v3.2.6
+      command: [ "tail", "-f", "/dev/null" ]
+      volumeMounts:
+        - name: ueransim-volume
+          mountPath: /data
+  volumes:
+    - name: ueransim-volume
+      emptyDir: {}
