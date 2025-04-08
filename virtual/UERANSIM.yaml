@@ -11,6 +11,13 @@ spec:
       volumeMounts:
         - name: ueransim-volume
           mountPath: /data
+        - name: dev-net-tun
+          mountPath: /dev/net/tun
+          readOnly: false
   volumes:
     - name: ueransim-volume
       emptyDir: {}
+    - name: dev-net-tun
+      hostPath:
+        path: /dev/net/tun
+        type: CharDevice

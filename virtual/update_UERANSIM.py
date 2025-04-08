@@ -34,3 +34,9 @@ for i in range(0,len(dnn)):
         file.close()
 print("UERANSIM files configuration updated")
 
+
+#kubectl cp ./UERANSIM/OAI-gnb-1.yaml oai/ueransim-sst-1:/UERANSIM/build
+#kubectl cp ./UERANSIM/OAI-ue-1.yaml oai/ueransim-sst-1:/UERANSIM/build
+#kubectl exec -it ueransim-sst-1 -n oai -- /bin/bash
+#./UERANSIM/build/nr-gnb -c UERANSIM/build/OAI-gnb-1.yaml
+#./UERANSIM/build/nr-ue -c UERANSIM/build/OAI-ue-1.yaml -i imsi-208950000000031
