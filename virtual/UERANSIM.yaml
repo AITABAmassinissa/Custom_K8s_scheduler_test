@@ -8,6 +8,10 @@ spec:
     - name: ueransim-container
       image: docker.io/maitaba/ueransim:v3.2.6
       command: [ "tail", "-f", "/dev/null" ]
+      securityContext:
+        capabilities:
+          add: ["NET_ADMIN"]
+        privileged: true
       volumeMounts:
         - name: ueransim-volume
           mountPath: /data
