@@ -5,9 +5,9 @@ nci: ttt  # NR Cell Identity (36-bit)
 idLength: 32        # NR gNB ID length in bits [22...32]
 tac: "1"              # Tracking Area Code
 
-linkIp:  0.0.0.0 # gNB's local IP address for Radio Link Simulation (Usually same with local IP) br-fdaa175f0c95
-ngapIp:  0.0.0.0 # gNB's local IPddress for N2 Interface (Usually same with local IP) br-fdaa175f0c95
-gtpIp:  0.0.0.0  # gNB's local IP address for N3 Interface (Usually same with local IP) br-fdaa175f0c95
+linkIp:  xxx # gNB's local IP address for Radio Link Simulation (Usually same with local IP) br-fdaa175f0c95
+ngapIp:  xxx # gNB's local IPddress for N2 Interface (Usually same with local IP) br-fdaa175f0c95
+gtpIp:  xxx  # gNB's local IP address for N3 Interface (Usually same with local IP) br-fdaa175f0c95
 
 # List of AMF address information
 amfConfigs:
@@ -16,8 +16,9 @@ amfConfigs:
 
 # List of supported S-NSSAIs by this gNB
 slices:
-  - sst: zzz
+  - sst: 1
+  - sst: 2
+  - sst: 3
     #sd: 16777215
-
 # Indicates whether or not SCTP stream number errors should be ignored.
 ignoreStreamIds: true

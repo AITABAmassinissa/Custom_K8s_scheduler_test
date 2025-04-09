@@ -6,10 +6,9 @@ network="cni0"
 dnn=["oai","oai2","oai3","oai4"]
 nci=["0x000000010","0x000000020","0x000000030","0x000000040"]
 sst=[1, 2, 3, 4]
-
-retour=os.popen("kubectl get pods -n "+namespace).read() 
+UERANSIM_name="ueransim-sst-1"
 amf_ip=os.popen("kubectl get pod -n "+namespace+" $(kubectl get pods --namespace "+namespace+" -l "+"app.kubernetes.io/name=oai-amf"+" -o jsonpath="+"{.items[0].metadata.name}"+") --template '{{.status.podIP}}'").read()
-
+UERANSIM_ip=os.popen("kubectl get pod -n "+namespace+" $(kubectl get pods --namespace "+namespace+" -l "+"app.kubernetes.io/name="+UERANSIM_name+" -o jsonpath="+"{.items[0].metadata.name}"+") --template '{{.status.podIP}}'").read()
 os.system("sudo ifconfig "+network+":"+str(1)+" "+str(ip_adress)+" up")
 #update OAI-gnb file for UERANSIM 
 data={}
@@ -17,6 +16,7 @@ for i in range(0,len(dnn)):
     with open(r'OAI-gnb.yaml', 'r') as file:
         data[i] = file.read()
         file.close()
+    data[i] = data[i].replace("xxx", str(UERANSIM_ip))
     data[i] = data[i].replace("yyy", str(amf_ip))
     data[i] = data[i].replace("ttt", str(nci[i]))
     data[i] = data[i].replace("zzz", str(sst[i]))
@@ -27,6 +27,7 @@ for i in range(0,len(dnn)):
     with open(r'OAI-ue.yaml', 'r') as file:
         data[i] = file.read()
         file.close()
+    data[i] = data[i].replace("xxx", str(UERANSIM_ip))
     data[i] = data[i].replace("yyy", dnn[i])
     data[i] = data[i].replace("zzz", str(sst[i]))
     with open(r'UERANSIM/'+"OAI-ue-"+str(sst[i])+".yaml", 'w') as file:
@@ -34,7 +35,7 @@ for i in range(0,len(dnn)):
         file.close()
 print("UERANSIM files configuration updated")
 
-
+#kubectl apply -f UERANSIM.yaml 
 #kubectl cp ./UERANSIM/OAI-gnb-1.yaml oai/ueransim-sst-1:/UERANSIM/build
 #kubectl cp ./UERANSIM/OAI-ue-1.yaml oai/ueransim-sst-1:/UERANSIM/build
 #kubectl exec -it ueransim-sst-1 -n oai -- /bin/bash
