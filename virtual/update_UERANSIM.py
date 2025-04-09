@@ -40,3 +40,4 @@ print("UERANSIM files configuration updated")
 #kubectl exec -it ueransim-sst-1 -n oai -- /bin/bash
 #./UERANSIM/build/nr-gnb -c UERANSIM/build/OAI-gnb-1.yaml
 #./UERANSIM/build/nr-ue -c UERANSIM/build/OAI-ue-1.yaml -i imsi-208950000000031
+#ping -c 3 -I uesimtun0 google.com
