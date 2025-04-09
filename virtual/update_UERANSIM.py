@@ -8,7 +8,7 @@ nci=["0x000000010","0x000000020","0x000000030","0x000000040"]
 sst=[1, 2, 3, 4]
 UERANSIM_name="ueransim-sst-1"
 amf_ip=os.popen("kubectl get pod -n "+namespace+" $(kubectl get pods --namespace "+namespace+" -l "+"app.kubernetes.io/name=oai-amf"+" -o jsonpath="+"{.items[0].metadata.name}"+") --template '{{.status.podIP}}'").read()
-UERANSIM_ip=os.popen("kubectl get pod -n "+namespace+" $(kubectl get pods --namespace "+namespace+" -l "+"app.kubernetes.io/name="+UERANSIM_name+" -o jsonpath="+"{.items[0].metadata.name}"+") --template '{{.status.podIP}}'").read()
+UERANSIM_ip=os.popen("kubectl get pod -n oai "+UERANSIM_name+" --template '{{.status.podIP}}'").read().strip()
 os.system("sudo ifconfig "+network+":"+str(1)+" "+str(ip_adress)+" up")
 #update OAI-gnb file for UERANSIM 
 data={}
